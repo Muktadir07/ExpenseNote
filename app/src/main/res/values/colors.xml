@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>-->
+    <!--<color name="colorPrimaryDark">#00574B</color>-->
+    <!--<color name="colorAccent">#D81B60</color>-->
+
+    <color name="colorPrimary">#262932</color>
+    <color name="colorPrimaryDark">#1c1e25</color>
+    <color name="colorAccent">#6CCFF6</color>
+    <color name="colorBackgroud">#474A52</color>
+    <color name="colorTextBackgroud">#ddeaf2</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="skybuleEndColor">#B2FEFA</color>
+    <color name="yellowStart">#E5E5BE</color>
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_mirage"
+    android:id="@+id/dashboardContainer"
+    tools:context=".Expense">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/action_bar_drawable">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense Note"
+                android:textSize="@dimen/HeaderFront"
+                android:textStyle="bold"
+                android:textColor="@color/colorBackgroud"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+        <LinearLayout
+            android:layout_below="@+id/actionBar"
+            android:id="@+id/expanseTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerCardview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/skybuleEndColor">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+
+                    />
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinner"
+                android:layout_marginHorizontal="60dp"
+                android:paddingTop="10dp"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/dateFrom"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/spinner"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_rounding"
+                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:text="From date"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+                <Button
+                    android:id="@+id/dateTo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/spinner"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_rounding"
+                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:text="To date"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/expenseRecyclerHolder"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:layout_below="@id/expanseTop"
+            android:paddingTop="20dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/expenseRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/expenseRecyclerHolder">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="70dp"
+            android:clickable="true"
+            android:tint="#FFFFFF"
+            android:src="@drawable/ic_add_black_24dp"
+            app:maxImageSize="40dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
