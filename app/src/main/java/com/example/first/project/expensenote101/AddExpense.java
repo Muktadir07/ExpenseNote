@@ -143,6 +143,8 @@ public class AddExpense extends AppCompatActivity implements AdapterView.OnItemS
                         expenseDate = selectedDateinMS;
                     //special case
                     String expenseTime= addTimeTV.getText().toString();
+
+
                     if (selectType.equals("")) {
                         Toast.makeText(AddExpense.this, "Please add Expense Type or Expense Date ", Toast.LENGTH_SHORT).show();
                     } else {
@@ -158,17 +160,26 @@ public class AddExpense extends AppCompatActivity implements AdapterView.OnItemS
                 else {
 
                     String expenseAmountStr = addExpenseAmountET.getText().toString();
-                    int expenseAmount = Integer.parseInt(expenseAmountStr);
-                    long expenseDate = selectedDateinMS;
-                    String expenseTime = addTimeTV.getText().toString();
-                    /////........... check if custom adapter is empty or Expense date is not choosen.......////////
-                    if (selectType.equals("")||expenseDate==0) {
-                        Toast.makeText(AddExpense.this, "Please add Expense Type or Expense Date ", Toast.LENGTH_SHORT).show();
-                    } else {
-                        long id = databaseHelper.insertData(selectType, expenseAmount, expenseDate, expenseTime);
-                        Toast.makeText(AddExpense.this, "Add to database in time " + expenseTime, Toast.LENGTH_SHORT).show();
+                    if (expenseAmountStr.equals("")) {
+                        Toast.makeText(AddExpense.this, "Expense Amount is empty", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                     else {
+                        int expenseAmount = Integer.parseInt(expenseAmountStr);
+                        long expenseDate = selectedDateinMS;
+                        String expenseTime = addTimeTV.getText().toString();
+
+
+                        /////........... check if custom adapter is empty or Expense date is not choosen.......////////
+                        if (selectType.equals("") || expenseDate == 0) {
+                            Toast.makeText(AddExpense.this, "Please add Expense Type or Expense Date ", Toast.LENGTH_SHORT).show();
+                        } else {
+                            long id = databaseHelper.insertData(selectType, expenseAmount, expenseDate, expenseTime);
+                            Toast.makeText(AddExpense.this, "Add to database in time " + expenseTime, Toast.LENGTH_SHORT).show();
 //                        expense.onResume();
 
+                        }
                     }
                 }
 
